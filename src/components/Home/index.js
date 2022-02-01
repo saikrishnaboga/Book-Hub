@@ -1,6 +1,7 @@
 import {Component} from 'react'
-
+import ReactSlick from '../SlideShow'
 import Header from '../Header'
+import Footer from '../Footer'
 import './index.css'
 
 class Home extends Component {
@@ -17,6 +18,16 @@ class Home extends Component {
               insightful recommendations.
             </p>
           </div>
+          <div className="slider-show-container">
+            <div className="top-rated-books-and-find-books slider ">
+              <h1 className="top-rated-books">Top Rated Books</h1>
+              <button type="button" className="find-books-button">
+                FindBooks
+              </button>
+            </div>
+            <ReactSlick />
+          </div>
+          <Footer />
         </div>
       </>
     )

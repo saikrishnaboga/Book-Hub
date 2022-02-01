@@ -9,10 +9,10 @@ import './index.css'
 class Login extends Component {
   state = {username: '', password: '', showSubmitError: false, errorMsg: ''}
 
-  onSubmitSuccuss = JwtToken => {
+  onSubmitSuccuss = jwtToken => {
     const {history} = this.props
 
-    Cookies.set('Jwt_token', JwtToken, {expires: 30})
+    Cookies.set('jwt_token', jwtToken, {expires: 30})
     history.replace('/')
   }
 
@@ -96,7 +96,7 @@ class Login extends Component {
       <div className="login-form-container">
         <img
           src="https://res.cloudinary.com/saikrishnaboga-ccbp-tech/image/upload/v1643539631/Book-Hub%20/Rectangle_1467bookhub-login-bg-img_s45xsa.png"
-          alt="website logo"
+          alt="login website logo"
           className="login-website-logo-mobile-image"
         />
         <img
@@ -116,7 +116,7 @@ class Login extends Component {
             <button type="submit" className="login-button">
               Login
             </button>
-            {showSubmitError && <p className="error-message">*{errorMsg}</p>}
+            {showSubmitError && <p className="error-message">{errorMsg}</p>}
           </form>
         </div>
       </div>
